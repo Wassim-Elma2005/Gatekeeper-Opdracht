@@ -25,6 +25,8 @@ func main() {
 	var KentekenInput string
 	fmt.Scan(&KentekenInput)
 
+	if len(KentekenInput) != 
+
 	if KentekenInput == Kentekens[0] || KentekenInput == Kentekens[1] || KentekenInput == Kentekens[2] || KentekenInput == Kentekens[3] || KentekenInput == Kentekens[4] {
 		//als de tijd lager is dan 7 dan foutmelding geven "We zijn helaas gesloten!"
 		if hour < 7 {
