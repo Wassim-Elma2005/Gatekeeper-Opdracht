@@ -47,7 +47,8 @@ func main() {
 		fmt.Println("Sorry,", Naam, "Uw kenteken staat niet geregistreerd in ons lijst!")
 
 	}
-}
+
+	test
 
 //Kentekens
 //AB-12-34
