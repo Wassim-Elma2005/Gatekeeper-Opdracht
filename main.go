@@ -6,8 +6,7 @@ import (
 )
 
 func main() {
-	hour := time.Now().Hour()
-
+	var hour int = time.Now().Hour()
 	var Kentekens [5]string
 	Kentekens[0] = "AB-12-34"
 	Kentekens[1] = "12-34-CD"
@@ -20,6 +19,9 @@ func main() {
 	fmt.Scan(&Naam)
 
 	fmt.Print("Voer alstublieft uw kenteken in (xx-xx-xx): ")
+	//als de user input groter is dan 8 characters, dan krijg je een foutmelding --> Vul a.u.b. een geldige kenteken in.
+	//als de user input kleiner is dan 8 characters, dan krijg je een foutmelding --> Vul a.u.b. een geldige kenteken in.
+	
 	var KentekenInput string
 	fmt.Scan(&KentekenInput)
 
@@ -30,19 +32,20 @@ func main() {
 		}
 		//als de tijd tussen 7 en 12 in zit dan melding geven "Goedemorgen"
 		if hour >= 7 && hour <= 12 {
-			fmt.Println("Goedemorgen", Naam)
+			fmt.Println("Goedemorgen", Naam, "! Het  is nu", hour, "uur")
 		}
 		//als de tijd tussen 12 en 18 zit dan melding geven "Goedemiddag"
-		if hour >= 13 && hour <= 18 {
-			fmt.Println("Goedemiddag", Naam)
+		if hour >= 12 && hour <= 18 {
+			fmt.Println("Goedemiddag", Naam, "! Het is nu", hour, "uur")
 		}
 		//als de tijd tussen 18 en 23 zit dan melding geven "goedeavond"
-		if hour >= 19 && hour <= 23 {
-			fmt.Println("Goedeavond!", Naam)
-		} else {
-			fmt.Println("Sorry,", Naam, "Uw kenteken staat niet geregistreerd in ons lijst!")
-
+		if hour >= 18 && hour <= 23 {
+			fmt.Println("Goedeavond!", Naam, "! Het is nu", hour, "uur")
 		}
+
+	} else {
+		fmt.Println("Sorry,", Naam, "Uw kenteken staat niet geregistreerd in ons lijst!")
+
 	}
 }
 
