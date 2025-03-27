@@ -13,6 +13,7 @@ func main() {
 	Kentekens[2] = "XY-56-78"
 	Kentekens[3] = "90-AB-12"
 	Kentekens[4] = "CD-34-56"
+	
 
 	fmt.Print("Voer alstublieft uw naam in: ")
 	var Naam string
@@ -21,13 +22,24 @@ func main() {
 	fmt.Print("Voer alstublieft uw kenteken in (xx-xx-xx): ")
 	//als de user input groter is dan 8 characters, dan krijg je een foutmelding --> Vul a.u.b. een geldige kenteken in.
 	//als de user input kleiner is dan 8 characters, dan krijg je een foutmelding --> Vul a.u.b. een geldige kenteken in.
-	
 	var KentekenInput string
-	fmt.Scan(&KentekenInput)
 
-	if len(KentekenInput) != 
+	for {
+	fmt.Scan(&KentekenInput)
+	
+	if len(KentekenInput) != 8 {
+			fmt.Println("Ongeldige invoer! Het kenteken moet precies 8 tekens zijn.")
+			continue
+		}
+		break
+	}
 
 	if KentekenInput == Kentekens[0] || KentekenInput == Kentekens[1] || KentekenInput == Kentekens[2] || KentekenInput == Kentekens[3] || KentekenInput == Kentekens[4] {
+		//Hier een loopje plaatsen waar de user input vergeleken wordt met de kentekens in de array
+		fmt.Println("Welkom", Naam, "! Uw kenteken is", KentekenInput)
+
+
+
 		//als de tijd lager is dan 7 dan foutmelding geven "We zijn helaas gesloten!"
 		if hour < 7 {
 			fmt.Println("Sorry,", Naam, "de parkeerplaats is ’s nachts gesloten!")
@@ -47,11 +59,8 @@ func main() {
 
 	} else {
 		fmt.Println("Sorry,", Naam, "Uw kenteken staat niet geregistreerd in ons lijst!")
-
 	}
-
-	test
-
+}
 //Kentekens
 //AB-12-34
 //12-34-CD
